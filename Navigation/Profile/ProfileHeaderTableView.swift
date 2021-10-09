@@ -1,4 +1,4 @@
-//хедер
+import SnapKit
 import UIKit
 
 class ProfileHeaderView: UIView {
@@ -61,6 +61,34 @@ class ProfileHeaderView: UIView {
     private func setupSubviews() {
         self.addSubviews(fullNameLabel,avatarImageView,statusLabel,statusButton)
         
+        avatarImageView.snp.makeConstraints{(make) -> Void in
+            make.width.height.equalTo(120)
+            make.top.equalTo(self).offset(16)
+            make.left.equalTo(self).offset(16)
+        }
+        
+        fullNameLabel.snp.makeConstraints{(make) -> Void in
+            make.top.equalTo(self).offset(27)
+            make.left.equalTo(avatarImageView.snp.right).offset(16)
+            make.right.equalTo(self).offset(-16)
+            make.height.equalTo(18)
+        }
+        
+        statusButton.snp.makeConstraints{(make) -> Void in
+            make.left.equalTo(self).offset(16)
+            make.right.equalTo(self).offset(-16)
+            make.top.equalTo(avatarImageView.snp.bottom).offset(16)
+            make.height.equalTo(50)
+            make.bottom.equalTo(self).offset(-16)
+        }
+        
+        statusLabel.snp.makeConstraints{(make) -> Void in
+            make.left.equalTo(avatarImageView.snp.right).offset(16)
+            make.right.equalTo(self).offset(-16)
+            make.height.equalTo(18)
+            make.bottom.equalTo(statusButton.snp.top).offset(-34)
+        }
+        /*
         NSLayoutConstraint.activate([
             avatarImageView.topAnchor.constraint(equalTo: self.topAnchor, constant: 16),
             avatarImageView.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 16),
@@ -82,7 +110,7 @@ class ProfileHeaderView: UIView {
             statusLabel.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -16),
             statusLabel.bottomAnchor.constraint(equalTo: statusButton.topAnchor, constant: -34),
             statusLabel.heightAnchor.constraint(equalTo: fullNameLabel.heightAnchor)
-            ])
+        ])*/
         }
 }
 

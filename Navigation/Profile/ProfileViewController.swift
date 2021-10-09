@@ -1,4 +1,4 @@
-//контроллер
+import iOSIntPackage
 import UIKit
 
 class ProfileViewController: UIViewController {
@@ -18,8 +18,6 @@ class ProfileViewController: UIViewController {
             
             #if DEBUG
             mainTable.backgroundColor = .systemPink
-            #else
-            mainTable.backgroundColor = .systemPurple
             #endif
             
             view.addSubview(mainTable)

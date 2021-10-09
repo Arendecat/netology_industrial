@@ -1,4 +1,4 @@
-//верстка ячейки таблицы
+import iOSIntPackage
 import UIKit
 
 class PostTableViewCell: UITableViewCell {
@@ -16,7 +16,9 @@ class PostTableViewCell: UITableViewCell {
     
     var post: ProfilePost? {
         didSet {
-            postImage.image = UIImage.init(named: post?.image ?? "blue_pixel")
+//            let ip = ImageProcessor()
+//            var out = UIImage()
+            postImage.image = UIImage.init(named: post?.image ?? "blue_pixel")!
             postAuthor.text = post?.author
             postDescription.text = post?.description
             postLikesCounter.text = "Likes: " + String(post?.likes ?? 0)
